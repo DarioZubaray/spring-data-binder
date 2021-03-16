@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "65199ee6-9ed7-4bf0-9748-7b6eb7d28949",
+		"name": "Data-binder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/greeting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/data-binder/v1/greeting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"data-binder",
+						"v1",
+						"greeting"
+					]
+				},
+				"description": "getting greeting"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/greeting/query_param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/data-binder/v1/greeting/query_param?name=dario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"data-binder",
+						"v1",
+						"greeting",
+						"query_param"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "dario"
+						}
+					]
+				},
+				"description": "getting greetings to the person given in the query params"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/greeting/path_variable/{name}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/data-binder/v1/greeting/path_variable/dario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"data-binder",
+						"v1",
+						"greeting",
+						"path_variable",
+						"dario"
+					]
+				},
+				"description": "getting greetings by name with path variable"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/greeting/form_data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "jose",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "32",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8181/data-binder/v1/greeting/form_data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"data-binder",
+						"v1",
+						"greeting",
+						"form_data"
+					]
+				},
+				"description": "getting greetings with body params"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/greeting/json",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jason\",\r\n    \"age\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/data-binder/v1/greeting/json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"data-binder",
+						"v1",
+						"greeting",
+						"json"
+					]
+				},
+				"description": "getting greeting by json request body"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/greeting/json_snake_case",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"snake\",\r\n    \"last_name\": \"case\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/data-binder/v1/greeting/json_snake_case",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"data-binder",
+						"v1",
+						"greeting",
+						"json_snake_case"
+					]
+				},
+				"description": "Getting greetings with request body with snake case attributes"
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/greeting/header",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "name",
+						"value": "Dario jose",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8181/data-binder/v1/greeting/header",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"data-binder",
+						"v1",
+						"greeting",
+						"header"
+					]
+				},
+				"description": "getting greeting by header param"
+			},
+			"response": []
+		}
+	]
+}
