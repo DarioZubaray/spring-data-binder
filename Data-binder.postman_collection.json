@@ -82,11 +82,8 @@
 		},
 		{
 			"name": "/v1/greeting/form_data",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "formdata",
@@ -123,11 +120,8 @@
 		},
 		{
 			"name": "/v1/greeting/json",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -158,11 +152,8 @@
 		},
 		{
 			"name": "/v1/greeting/json_snake_case",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -222,11 +213,8 @@
 		},
 		{
 			"name": "/v1/greeting/form_data/snake_case",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "formdata",
