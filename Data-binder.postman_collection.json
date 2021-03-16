@@ -219,6 +219,48 @@
 				"description": "getting greeting by header param"
 			},
 			"response": []
+		},
+		{
+			"name": "/v1/greeting/form_data/snake_case",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "jose",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "zubaray",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8181/data-binder/v1/greeting/form_data/snake_case",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"data-binder",
+						"v1",
+						"greeting",
+						"form_data",
+						"snake_case"
+					]
+				},
+				"description": "geeting greetins in a formdata with snakecase params"
+			},
+			"response": []
 		}
 	]
 }
