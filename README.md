@@ -2,6 +2,12 @@
 
 springboot demo for data binder in controller
 
+### Swagger ui
+```
+http://localhost:8181/data-binder/swagger-ui/index.html
+```
+
+### Requests
 - Query param
 
 ```
