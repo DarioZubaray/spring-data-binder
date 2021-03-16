@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.zubaray.data.binder.models.MyData;
+import com.zubaray.data.binder.models.MyDataDto;
 
 @RestController
 @RequestMapping("/v1")
@@ -31,17 +31,22 @@ public class MyDatacontroller {
     }
 
     @GetMapping("/greeting/form_data")
-    public String greetingFormdata(@ModelAttribute MyData data) {
+    public String greetingFormdata(@ModelAttribute MyDataDto data) {
         return "Hola " + data.getName() + ", you are " + data.getAge() + " years old";
     }
 
+    @GetMapping("/greeting/form_data/snake_case")
+    public String greetingFormdataSnakeCase(@ModelAttribute MyDataDto data) {
+        return "Hola " + data.getFirstName() + " " + data.getLastName() + " formdata";
+    }
+
     @GetMapping("/greeting/json")
-    public String greetingJson(@RequestBody MyData data) {
+    public String greetingJson(@RequestBody MyDataDto data) {
         return "Hola " + data.getName() + ", how's everything";
     }
 
     @GetMapping("/greeting/json_snake_case")
-    public String greetingJsonSnakeCase(@RequestBody MyData data) {
+    public String greetingJsonSnakeCase(@RequestBody MyDataDto data) {
         return "Hola " + data.getFirstName() + " " + data.getLastName();
     }
 
